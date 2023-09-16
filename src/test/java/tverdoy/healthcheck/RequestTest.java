@@ -20,8 +20,8 @@ class RequestTest {
     }
 
     @Test
-    void getUrlNull() {
+    void getUrlDefault() {
         Request request = new Request(checkAddress, null);
-        assertNull(request.getUrl());
+        assertEquals(request.getUrl(), "/");
     }
 }
