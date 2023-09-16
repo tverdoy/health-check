@@ -14,6 +14,9 @@ public interface IHTTPRequest {
      */
     String getUrl();
 
+    /**
+     * @return a string of request HTTP package
+     */
     default String generateHTTPPackage() {
         return String.format(template, getUrl(), getAddress());
     }
