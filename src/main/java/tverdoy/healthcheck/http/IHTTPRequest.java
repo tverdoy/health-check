@@ -1,7 +1,7 @@
-package tverdoy.healthcheck;
+package tverdoy.healthcheck.http;
 
-public interface IRequest {
-    String HTTPTemplate = "GET %s HTTP/1.0\r\nHost: %s\r\n\r\n";
+public interface IHTTPRequest {
+    String template = "GET %s HTTP/1.0\r\nHost: %s\r\n\r\n";
 
     /**
      * @return an address that must be checked
@@ -15,6 +15,6 @@ public interface IRequest {
     String getUrl();
 
     default String generateHTTPPackage() {
-        return String.format(HTTPTemplate, getUrl(), getAddress());
+        return String.format(template, getUrl(), getAddress());
     }
 }

@@ -1,14 +1,14 @@
-package tverdoy.healthcheck;
+package tverdoy.healthcheck.http;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class IRequestTest {
+class IHTTPRequestTest {
     @Test
-    void generateHTTPRequest() {
+    void generateHTTPRequestTest() {
         String url = "/test";
-        Request request = new Request(RequestTest.checkAddress, url);
+        HTTPRequest request = new HTTPRequest(HTTPRequestTest.checkAddress, url);
         String httpPackage = request.generateHTTPPackage();
 
         String[] split = httpPackage.split("\r\n");

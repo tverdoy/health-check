@@ -1,27 +1,27 @@
-package tverdoy.healthcheck;
+package tverdoy.healthcheck.http;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class RequestTest {
+class HTTPRequestTest {
     static String checkAddress = "httpstat.us";
     @Test
     void getAddressTest() {
-        Request request = new Request(checkAddress);
+        HTTPRequest request = new HTTPRequest(checkAddress);
         assertEquals(request.getAddress(), checkAddress);
     }
 
     @Test
     void getUrlTest() {
         String url = "/200";
-        Request request = new Request(checkAddress, url);
+        HTTPRequest request = new HTTPRequest(checkAddress, url);
         assertEquals(request.getUrl(), url);
     }
 
     @Test
-    void getUrlDefault() {
-        Request request = new Request(checkAddress, null);
+    void getUrlDefaultTest() {
+        HTTPRequest request = new HTTPRequest(checkAddress, null);
         assertEquals(request.getUrl(), "/");
     }
 }
