@@ -2,13 +2,16 @@ package tverdoy.healthcheck.http;
 
 import org.junit.jupiter.api.Test;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class IHTTPRequestTest {
     @Test
-    void generateHTTPRequestTest() {
+    void generateHTTPRequestTest() throws UnknownHostException {
         String url = "/test";
-        HTTPRequest request = new HTTPRequest(HTTPRequestTest.checkAddress, url);
+        HTTPRequest request = new HTTPRequest(InetAddress.getByName(HTTPRequestTest.checkAddress), url);
         String httpPackage = request.generateHTTPPackage();
 
         String[] split = httpPackage.split("\r\n");

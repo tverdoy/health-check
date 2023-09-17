@@ -1,12 +1,14 @@
 package tverdoy.healthcheck.http;
 
+import java.net.InetAddress;
+
 public interface IHTTPRequest {
     String template = "GET %s HTTP/1.0\r\nHost: %s\r\n\r\n";
 
     /**
      * @return an address that must be checked
      */
-    String getAddress();
+    InetAddress getAddress();
 
 
     /**
